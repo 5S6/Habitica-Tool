@@ -1,13 +1,27 @@
 import requests 
 import threading
 import time
+import colorama
+from colorama import Fore, Back, Style
+from colorama import init
+init()
 
-print('[1] - Coin Farmer')
+print(Fore.RED + """
+  ___ ___       ___.   .__  __  .__                ___________           .__   
+ /   |   \_____ \_ |__ |__|/  |_|__| ____ _____    \__    ___/___   ____ |  |  
+/    ~    \__  \ | __ \|  \   __\  |/ ___\\__  \     |    | /  _ \ /  _ \|  |  
+\    Y    // __ \| \_\ \  ||  | |  \  \___ / __ \_   |    |(  <_> |  <_> )  |__
+ \___|_  /(____  /___  /__||__| |__|\___  >____  /   |____| \____/ \____/|____/
+       \/      \/    \/                 \/     \/                              
+       """)
+
+
+print(Fore.GREEN+'[1] - Coin Farmer')
 print('[2] - Mass Buy Armored Warrior')
 print('[3] - Mass Birthday Card Send')
 print('[4] - Mass Congratulations Card Send')
 print('[5] - Mass Good Luck Card Send')
-print('[6] - Message Spam')
+print('[6] - Tavern Spam (Ratelimit)')
 
 
 
@@ -294,20 +308,48 @@ def MessageSpam():
 
 
 
-def MessageSpam():
-  headers1 = {
+def TavernSpam():
+    
+ headers1 = {
     'x-api-key': 'e705e8df-42e0-44da-b005-931a601e2ff8',
     'x-api-user':'6f60b8b0-822f-4bc7-a664-c3c8ed13f679'
-  }
+    }
+ tavernurl = 'https://habitica.com/api/v4/groups/00000000-0000-4000-A000-000000000000/chat'
+ 
+ payload = {
+    'message': "AlekDevs On Top!"
+ }
+
+ tspam = requests.post(tavernurl, headers=headers1, data=payload)
+ print(tspam.text)
+ threads=[]
+
+ for i in range(20):
+   t = threading.Thread(target = TavernSpam)
+   t.Daemon = True
+   threads.append(t)
+
+ for i in range(20):
+   threads[i].start()
+   time.sleep(1.5)
+
+ for i in range(20):
+   threads[i].join()
 
 
-tavernul = 'https://habitica.com/api/v4/groups/00000000-0000-4000-A000-000000000000/chat'
-payload3 = {
-    'message': "hey!"
-}
+ time.sleep(15)
 
-tspam = requests.post(tavernul, headers=header1,data = payload3 )
+ for i in range(20):
+   t = threading.Thread(target = TavernSpam)
+   t.Daemon = True
+   threads.append(t)
 
+ for i in range(20):
+   threads[i].start()
+   time.sleep(1.5)
+
+ for i in range(20):
+   threads[i].join()
 
 
 
@@ -328,9 +370,5 @@ if option == 4:
 if option == 5:
     MassGoodLuckCardSend()
 
-
-
-
-
-
-
+if option == 6:
+    TavernSpam()
