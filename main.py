@@ -4,6 +4,8 @@ import time
 import colorama
 from colorama import Fore, Back, Style
 from colorama import init
+import json
+
 init()
 
 print(Fore.RED + """
@@ -16,14 +18,16 @@ print(Fore.RED + """
        """)
 
 
-print(Fore.GREEN+'[1] - Coin Farmer')
-print('[2] - Mass Buy Armored Warrior')
-print('[3] - Mass Birthday Card Send')
-print('[4] - Mass Congratulations Card Send')
-print('[5] - Mass Good Luck Card Send')
-print('[6] - Tavern Spam (Ratelimit)')
+print(Fore.GREEN+'''
+[1] - Coin Farmer
+[2] - Mass Buy Armored Warrior
+[3] - Mass Birthday Card Send
+[4] - Mass Congratulations Card Send
+[5] - Mass Good Luck Card Send
+[6] - Tavern Spam''')
 
-
+with open('config.json') as f:
+    config = json.load(f)
 
 
 
@@ -38,8 +42,8 @@ url = 'https://habitica.com/api/v4/tasks/205bd31a-d40d-4d88-b19b-71d87cf7a1c9/sc
 
 def coins():
   headers = {
-    'x-api-key': 'e705e8df-42e0-44da-b005-931a601e2ff8',
-    'x-api-user':'6f60b8b0-822f-4bc7-a664-c3c8ed13f679'
+    'x-api-key': config.get('x-api-key'),
+    'x-api-user': config.get('x-api-user')
   }
   
 
@@ -93,8 +97,8 @@ def coins():
 
 def massbuy():
   headers1 = {
-    'x-api-key': 'e705e8df-42e0-44da-b005-931a601e2ff8',
-    'x-api-user':'6f60b8b0-822f-4bc7-a664-c3c8ed13f679'
+    'x-api-key': config.get('x-api-key'),
+    'x-api-user':config.get('x-api-user')
   }
   i = 2 
   i = i + 1
@@ -135,8 +139,8 @@ def massbuy():
 
 def MassBirthdayCardSend():
  headers2 = {
-    'x-api-key': 'e705e8df-42e0-44da-b005-931a601e2ff8',
-    'x-api-user':'6f60b8b0-822f-4bc7-a664-c3c8ed13f679'
+    'x-api-key': config.get('x-api-key'),
+    'x-api-user':config.get('x-api-user')
   }
   
  id = str(input("\nInput User ID: "))
@@ -174,8 +178,8 @@ def MassBirthdayCardSend():
 
 def MassCongratulationsCardSend():
  headers2 = {
-    'x-api-key': 'e705e8df-42e0-44da-b005-931a601e2ff8',
-    'x-api-user':'6f60b8b0-822f-4bc7-a664-c3c8ed13f679'
+    'x-api-key': config.get('x-api-key'),
+    'x-api-user':config.get('x-api-user')
   }
 
  id1 = str(input("\nInput User ID: "))
@@ -217,8 +221,8 @@ def MassCongratulationsCardSend():
 def MassGoodLuckCardSend():
  
  headers2 = {
-    'x-api-key': 'e705e8df-42e0-44da-b005-931a601e2ff8',
-    'x-api-user':'6f60b8b0-822f-4bc7-a664-c3c8ed13f679'
+    'x-api-key': config.get('x-api-key'),
+    'x-api-user':config.get('x-api-user')
   }
   
 
@@ -260,8 +264,8 @@ def MassGoodLuckCardSend():
 def MessageSpam():
  
  headers5 = {
-    'x-api-key': 'e705e8df-42e0-44da-b005-931a601e2ff8',
-    'x-api-user':'6f60b8b0-822f-4bc7-a664-c3c8ed13f679'
+    'x-api-key': config.get('x-api-key'),
+    'x-api-user':config.get('x-api-user')
   }
 
 
@@ -311,8 +315,8 @@ def MessageSpam():
 def TavernSpam():
     
  headers1 = {
-    'x-api-key': 'e705e8df-42e0-44da-b005-931a601e2ff8',
-    'x-api-user':'6f60b8b0-822f-4bc7-a664-c3c8ed13f679'
+    'x-api-key': config.get('x-api-key'),
+    'x-api-user':config.get('x-api-user')
     }
  tavernurl = 'https://habitica.com/api/v4/groups/00000000-0000-4000-A000-000000000000/chat'
  
