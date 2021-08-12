@@ -32,13 +32,13 @@ with open('config.json') as f:
 
 
 
-url1 = 'https://habitica.com/api/v4/tasks/600ca03f-4d7a-4ffe-a551-61643017f482/score/up'
-url2 = 'https://habitica.com/api/v4/tasks/dd67464b-220f-48b6-8fe5-45de7fef884f/score/up'
-url3 = 'https://habitica.com/api/v4/tasks/3d47f2e0-3075-4e72-92a5-9c7e01ca4266/score/up'
-url4 = 'https://habitica.com/api/v4/tasks/d33b72b0-64ea-48fd-a56a-7590f7e0d28e/score/up'
-url5 = 'https://habitica.com/api/v4/tasks/11c07912-95a7-4bf7-ace2-0bce1dc0ba52/score/up'
-url6 = 'https://habitica.com/api/v4/tasks/89abe65b-438d-452a-bd85-2f6ee38bb30b/score/up'
-url = 'https://habitica.com/api/v4/tasks/205bd31a-d40d-4d88-b19b-71d87cf7a1c9/score/up'
+url1 = config.get('url1')
+url2 = config.get('url2')
+url3 = config.get('url3')
+url4 = config.get('url4')
+url5 = config.get('url5')
+url6 = config.get('url6')
+url = config.get('url')
 
 def coins():
   headers = {
@@ -143,7 +143,7 @@ def MassBirthdayCardSend():
     'x-api-user':config.get('x-api-user')
   }
   
- id = str(input("\nInput User ID: "))
+ id = config.get('MassBirthdayCardSendID')
  send = requests.post('https://habitica.com/api/v4/user/class/cast/birthday?targetId='+id, headers=headers2)
  print(send.text)
  threads=[]
@@ -182,7 +182,7 @@ def MassCongratulationsCardSend():
     'x-api-user':config.get('x-api-user')
   }
 
- id1 = str(input("\nInput User ID: "))
+ id1 = config.get('MassCongratulationsCardSendID')
  send1 = requests.post('https://habitica.com/api/v4/user/class/cast/congrats?targetId='+id1, headers=headers2)
  print(send1.text)
  threads=[]
@@ -226,7 +226,7 @@ def MassGoodLuckCardSend():
   }
   
 
- id2 = str(input("\nInput User ID: "))
+ id2 = config.get('MassGoodLuckCardSend')
  send2 = requests.post('https://habitica.com/api/v4/user/class/cast/birthday?targetId='+id2, headers=headers2)
  print(send2.text)
  threads=[]
