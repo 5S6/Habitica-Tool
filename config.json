@@ -1,4 +1,14 @@
 {
 "x-api-key": "YOUR_API_KEY",
-"x-api-user":"YOUR_API_USER"
+"x-api-user":"YOUR_API_USER",
+"MassBirthdayCardSendID":"ID_TO_SEND_CARDS_TO",
+"MassCongratulationsCardSendID":"ID_TO_SEND_CARDS_TO",
+"MassGoodLuckCardSend": "ID_TO_SEND_CARDS_TO",
+"url":"FIRST_TASK_URL",
+"url1": "SECOND_TASK_URL",
+"url2":"THIRD_TASK_URL",
+"url3":"FOURTH_TASK_URL",
+"url4":"FITH_TASK_URL",
+"url5":"SIXTH_TASK_URL",
+"url6":"SEVENTH_TASK_URL"
 }
