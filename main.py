@@ -19,12 +19,12 @@ print(Fore.RED + """
 
 
 print(Fore.GREEN+'''
-[1] - Coin Farmer
+[1] - Coin/XP/Level Farmer
 [2] - Mass Buy Armored Warrior
 [3] - Mass Birthday Card Send
 [4] - Mass Congratulations Card Send
 [5] - Mass Good Luck Card Send
-[6] - Tavern Spam''')
+[6] - Tavern Spam(Horrible RateLimit)''')
 
 with open('config.json') as f:
     config = json.load(f)
