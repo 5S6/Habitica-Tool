@@ -12,3 +12,7 @@ A random thing I made in my freetime.
 3.) Paste them into config.json
 
 MORE DIRECTIONS COMING SOON
+
+
+# Menu
+<img width="595" alt="Menu" src="https://user-images.githubusercontent.com/71937946/136389647-2b7b7235-6f25-4531-89df-375dfa3ea5eb.png">
