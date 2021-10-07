@@ -4,7 +4,7 @@ A random thing I made in my freetime.
 
 
 # Proof
-All located under the Photos folder, or you can just click [Here](https://github.com/Alektherblxdev/Habitica-Tool/tree/main/Photos)
+All located under the Photos folder, or you can just click [here](https://github.com/Alektherblxdev/Habitica-Tool/tree/main/Photos)
 
 
 # Directions
