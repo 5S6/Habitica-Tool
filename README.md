@@ -3,6 +3,10 @@
 A random thing I made in my freetime.
 
 
+# Proof
+All located under the Photos folder, or you can just click [Here](https://github.com/Alektherblxdev/Habitica-Tool/tree/main/Photos)
+
+
 # Directions
 
 1.) Go to https://habitica.com and create an account.
