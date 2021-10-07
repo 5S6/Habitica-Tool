@@ -24,7 +24,7 @@ print(Fore.GREEN+'''
 [3] - Mass Birthday Card Send
 [4] - Mass Congratulations Card Send
 [5] - Mass Good Luck Card Send
-[6] - Tavern Spam(Horrible RateLimit)''')
+[6] - Tavern Spam(Horrible Ratelimit)''')
 
 with open('config.json') as f:
     config = json.load(f)
