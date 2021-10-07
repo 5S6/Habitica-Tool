@@ -8,3 +8,7 @@ A random thing I made in my freetime.
 1.) Go to https://habitica.com and create an account.
 
 2.) After signing up obtain your *x-api-key* and *x-api-user*
+
+3.) Paste them into config.json
+
+MORE DIRECTIONS COMING SOON
